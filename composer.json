@@ -1,0 +1,13 @@
+{
+    "name": "vendor/new-cms",
+    "description": "Description of project new_cms.",
+    "authors": [
+        {
+            "name": "tyler",
+            "email": "tylerb.media@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
