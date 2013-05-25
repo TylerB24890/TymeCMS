@@ -1,9 +1,9 @@
 {
-    "name": "vendor/new-cms",
-    "description": "Description of project new_cms.",
+    "name": "TymeCMS",
+    "description": "A fully featured content management system built on the CodeIgniter PHP Framework.",
     "authors": [
         {
-            "name": "tyler",
+            "name": "Tyler Bailey",
             "email": "tylerb.media@gmail.com"
         }
     ],
