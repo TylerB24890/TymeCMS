@@ -1,4 +1,4 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -13,36 +13,36 @@ $config = array(
     
         //contact form rules
         'contact_rules' => array(
-            'name' => array(
+            array(
                 'field' => 'name',
                 'label' => 'Full Name',
                 'rules' => 'trim|required|xss_clean'
             ),
-            'email' => array(
+            array(
                 'field' => 'email', 
                 'label' => 'Email', 
                 'rules' => 'trim|required|valid_email|xss_clean'
             ), 
-            'subject' => array(
+            array(
                 'field' => 'subject',
                 'label' => 'Subject',
                 'rules' => 'trim|required|xss_clean'
              ),
-            'message' => array(
+            array(
                 'field' => 'message',
                 'label' => 'Message',
-                'rules' => 'required|xss_clean'
+                'rules' => 'trim|required|xss_clean'
             )
         ),
         
         //admin login rules
         'user_rules' => array(
-            'email' => array(
+            array(
                 'field' => 'email', 
                 'label' => 'Email', 
                 'rules' => 'trim|required|valid_email|xss_clean'
             ), 
-            'password' => array(
+            array(
                 'field' => 'password', 
                 'label' => 'Password', 
                 'rules' => 'trim|required'
@@ -51,22 +51,22 @@ $config = array(
         
         //create new admin rules
         'admin_rules' => array(
-            'name' => array(
+            array(
                 'field' => 'name', 
                 'label' => 'Name', 
                 'rules' => 'trim|required|xss_clean'
             ), 
-            'email' => array(
+            array(
                 'field' => 'email', 
                 'label' => 'Email', 
                 'rules' => 'trim|required|valid_email|callback__unique_email|xss_clean'
             ), 
-            'password' => array(
+            array(
                 'field' => 'password', 
                 'label' => 'Password', 
                 'rules' => 'trim|matches[password_confirm]|required'
             ),
-            'password_confirm' => array(
+            array(
                 'field' => 'password_confirm', 
                 'label' => 'Confirm password', 
                 'rules' => 'trim|matches[password]|required'
@@ -75,61 +75,123 @@ $config = array(
         
         //edit/create page rules
         'page_rules' => array(
-            'parent_id' => array(
+            array(
                 'field' => 'parent_id', 
                 'label' => 'Parent', 
                 'rules' => 'trim|intval'
             ), 
-            'template' => array(
+            array(
                 'field' => 'template', 
                 'label' => 'Template', 
                 'rules' => 'trim|required|xss_clean'
             ), 
-            'title' => array(
+            array(
                 'field' => 'title', 
                 'label' => 'Title', 
                 'rules' => 'trim|required|max_length[100]|xss_clean'
             ), 
-            'slug' => array(
+            array(
                 'field' => 'slug', 
                 'label' => 'Slug', 
                 'rules' => 'trim|max_length[100]|url_title|callback__unique_slug|xss_clean'
             ), 
-            'body' => array(
+            array(
                 'field' => 'body', 
                 'label' => 'Body', 
                 'rules' => 'trim|required'
-            ),
-            'slider' => array(
-                'field' => 'slider',
-                'label' => 'Slider Images',
-                'rules' => 'callback_handle_upload'
             ),
         ),
         
         //edit/create blog post rules
         'article_rules' => array(
-            'pubdate' => array(
+            array(
                 'field' => 'pubdate', 
                 'label' => 'Publication date', 
                 'rules' => 'trim|required|exact_length[10]|xss_clean'
             ), 
-            'title' => array(
+            array(
                 'field' => 'title', 
                 'label' => 'Title', 
                 'rules' => 'trim|required|max_length[100]|xss_clean'
             ), 
-            'slug' => array(
+            array(
                 'field' => 'slug', 
                 'label' => 'Slug', 
                 'rules' => 'trim|required|max_length[100]|url_title|xss_clean'
             ), 
-            'body' => array(
+            array(
                 'field' => 'body', 
                 'label' => 'Body', 
                 'rules' => 'trim|required'
             )
         ),
+		
+		//add product
+		'add_product' => array(
+			array(
+				'field' => 'product_name',
+				'label' => 'Product Name',
+				'rules' => 'trim|required|xss_clean|max_length[255]'
+			),
+			array(
+				'field' => 'product_price',
+				'label' => 'Product Price',
+				'rules' => 'trim|required'
+			),
+			array(
+				'field' => 'product_id',
+				'label' => 'Product ID',
+				'rules' => 'trim|xss_clean|required'
+			),
+			array(
+				'field' => 'quantity',
+				'label' => 'Available Quantity',
+				'rules' => 'trim|is_natural|required'
+			),
+			array(
+				'field' => 'product_description',
+				'label' => 'Product Description',
+				'rules' => 'trim|xss_clean|required'
+			)
+		),
+		
+		//edit cart quantities
+		'store/viewCart' => array(
+			array(
+				'field' => 'qty',
+				'label' => 'QTY',
+				'rules' => 'trim|required|is_natural|xss_clean'
+			)
+		),
+		
+		//edit product
+		'update_product' => array(
+			array(
+				'field' => 'product_name',
+				'label' => 'Product Name',
+				'rules' => 'trim|required|xss_clean|max_length[255]'
+			),
+			array(
+				'field' => 'product_price',
+				'label' => 'Product Price',
+				'rules' => 'trim|required'
+			),
+			array(
+				'field' => 'product_id',
+				'label' => 'Product ID',
+				'rules' => 'trim|xss_clean|required'
+			),
+			array(
+				'field' => 'quantity',
+				'label' => 'Available Quantity',
+				'rules' => 'trim|is_natural|required'
+			),
+			array(
+				'field' => 'product_description',
+				'label' => 'Product Description',
+				'rules' => 'trim|xss_clean|required'
+			)
+		),
     
 );        
 

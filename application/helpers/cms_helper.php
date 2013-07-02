@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -81,7 +81,7 @@ function get_menu ($array, $child = FALSE)
 	$str = '';
 	
 	if (count($array)) {
-		$str .= $child == FALSE ? '<ul class="nav">' . PHP_EOL : '<ul class="dropdown-menu">' . PHP_EOL;
+		$str .= $child == FALSE ? '<ul class="nav nav-pills">' . PHP_EOL : '<ul class="dropdown-menu">' . PHP_EOL;
 		
 		foreach ($array as $item) {
 			

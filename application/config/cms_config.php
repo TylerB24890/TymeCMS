@@ -1,4 +1,4 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -9,3 +9,5 @@
  */
 
 $config['site_name'] = 'Tyme CMS';
+$config['logo_dir'] = '';
+$config['contact_email'] = '';

@@ -11,32 +11,14 @@
         
 		<td><?php
             //display dropdown list of page templates
-            echo form_dropdown('template', array('page' => 'Default Page', //standard page
+            echo form_dropdown('template', array('page' => 'Blank Template', //standard page
+												 'store_front' => 'Store Front', //store front
                                                  'news_archive' => 'Blog Archive', //blog page
-                                                 'homepage' => 'Homepage', //default homepage
-                                                 'homepage_slider' => 'Homepage with Slider', //homepage with slider
-                                                 'photo_gallery' => 'Photo Gallery', //photo gallery page
+                                                 'homepage' => 'Homepage', //homepage with slider
                                                  'contact' => 'Contact Page'), //contact form
                 
             $this->input->post('template') ? $this->input->post('template') : $page->template, 'id="select_template"'); ?></td>
 	</tr>
-    <tr id='slider_upload_form'>
-        <td>Slider Images</td>
-        <td>           
-            
-            <?php
-                //create array of currently uploaded photos
-                echo form_dropdown('photos', array(''));
-            ?>
-
-        </td>
-    </tr>
-    <tr id='photo_upload_form'>
-        <td>Photo Gallery</td>
-        <td>           
-            <a href="admin/photoGallery/"><button class='btn btn-primary'>Upload Photos</button></a>
-        </td>
-    </tr>
 	<tr>
 		<td>Title</td>
 		<td><?php echo form_input('title', set_value('title', $page->title)); ?></td>

@@ -1,4 +1,5 @@
 		<!-- Main content -->
+	<div class='row'>
  		<div class="span9">
 			<article>
 				<h2><?php echo e($article->title); ?></h2>
@@ -10,5 +11,6 @@
  		<!-- Sidebar -->
  		<div class="span3 sidebar">
  			<h2>Recent Posts</h2>
-            <?php $this->load->view('sidebar'); ?>
+            <?php $this->load->view('sidebars/sidebar'); ?>
  		</div>
+	</div>

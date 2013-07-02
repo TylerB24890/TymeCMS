@@ -1,0 +1,155 @@
+/*
+ * @project	Tyme.css
+ * @author	Tyler Bailey
+ * 
+ * @desc	Global Tyme CMS CSS 
+ * 
+ */
+
+
+/* Import Bootstrap */
+@import url('bootstrap.min.css');
+
+/* Layout Styles */
+footer {
+    border-top: 1px solid #e8e8e8;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Form Styles */
+input[type='text']{
+	display: inline-block;
+}
+label {
+	background: none;
+	color: #333;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.form-field {
+	margin: 15px 0;
+}
+
+
+/* Typography Styles */
+h1 { 
+	display: inline-block; 
+	height: 70px; padding: 20px 0 0 0; 
+	color: black; 
+}
+h2 a { color: black; }
+
+.title {
+	font-size: 1.3em;
+	line-height: 32px;
+	font-weight: bold;
+	display: block;
+}
+p.pubdate { 
+	font-style: italic; 
+	font-size: 0.9em;
+}
+.error {
+	color: red;
+	font-weight: bold;
+	margin: 15px 0;
+}
+.success {
+	color: green;
+	font-weight: bold;
+	margin: 15px 0;
+}
+
+
+/* Table Styles */
+tr {
+	border-bottom: 1px solid #e8e8e8;
+}
+
+
+/* Dropdown Navigation Styles */
+ul.nav li.dropdown:hover ul.dropdown-menu { display: block; }
+
+
+/* Sidebar Styles */
+.admin-sidebar {
+    margin-top: 25px;
+}
+.sidebar h3 { 
+	font-size: 1em; 
+	line-height: 1.2em; 
+	margin-bottom: 0; 
+}
+.sidebar ul { 
+	margin-left: 0; 
+	list-style-type: none; 
+}
+
+
+/* Carousel Styles */
+.carousel img {
+	width: 100%;
+}
+.carousel-caption {
+	color: #FFF;
+}
+
+
+/* Store Styles */
+.product-form {
+	margin: 15px 0;
+}
+ul.products {
+	list-style-type: none;
+}
+
+ul.products li {
+	margin: 20px 0;
+}
+ul.products img {
+	max-width: 200px;
+	max-height: 200px;
+	margin: 10px;
+}
+img.product-photo {
+	max-width: 200px;
+	max-height: 200px;
+	margin: 0 10px 20px 0;
+	float: left;
+}
+img.full-product-photo {
+	max-width: 300px;
+	max-height: 300px;
+	margin: 0 20px 20px 0;
+	float: left;
+}
+.product-button {
+	margin: 20px 0;
+}
+
+
+/* Sortable List */
+.mjs-nestedSortable-error {
+	background: #fbe3e4; border-color: transparent;
+}
+ol {
+	margin: 0; padding: 0; padding-left: 30px;
+}
+ol.sortable,ol.sortable ol {
+	margin: 0 0 0 25px; padding: 0; list-style-type: none;
+}
+ol.sortable {
+	margin: 4em 0;
+}
+.sortable li {
+	margin: 5px 0 0 0; padding: 0;
+}
+.sortable li div {
+	border: 1px solid #d4d4d4; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border-color: #D4D4D4 #D4D4D4 #BCBCBC; padding: 6px; margin: 0; cursor: move; background: #f6f6f6; background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed) ); background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr = '#ffffff', endColorstr = '#ededed', GradientType = 0 );
+}

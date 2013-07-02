@@ -1,27 +1,40 @@
-<?php $this->load->view('components/page_head');?>
+<?php 
+
+$this->load->view('components/page_head');
+
+
+//get the current page name
+$currentPage = $_SERVER["PHP_SELF"];
+$parts = explode('/', $currentPage);
+
+//page url
+$page = $parts[count($parts) - 1];
+?>
 
 
 <body>
 
-<div class="container">
+
     <header>
-        <section>
-            <h1><?php echo anchor('', strtoupper(config_item('site_name'))); ?></h1>
-        </section>
+		<div class="container">
+			<section>
+
+				<h1><?php echo anchor('', strtoupper(config_item('site_name'))); ?></h1>
+
+				<div class="navbar pull-right">
+					<div class="container">
+						<?php echo get_menu($menu); ?>
+					</div>
+				</div>
+			</section>
+		</div>
     </header>
-	 <div class="navbar">
-	 	<div class="navbar-inner">
-	 		<div class="container">
-                <?php echo get_menu($menu); ?>
-	 		</div>
-	 	</div>
-	 </div>
- </div>
+
  
- <div class="container">
- 	<div class="row">
-        <?php $this->load->view('templates/' . $subview); ?>
- 	</div>
- </div>
+	<div class="container">
+		<?php $this->load->view('templates/' . $subview); ?>
+	</div>
     
- <?php $this->load->view('components/page_tail');?>
+	<div class='container'>
+		<?php $this->load->view('components/page_tail');?>
+	</div>

@@ -13,5 +13,5 @@
  		<!-- Sidebar -->
  		<div class="span3 sidebar">
  			<h2>Recent Posts</h2>
-            <?php $this->load->view('sidebar'); ?>
+            <?php $this->load->view('sidebars/sidebar'); ?>
  		</div>

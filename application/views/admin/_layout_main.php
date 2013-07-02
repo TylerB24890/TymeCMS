@@ -5,13 +5,13 @@
 	    <div class="navbar-inner">
             <div class='container'>
 		    <a class="brand" href="<?php echo site_url('admin/dashboard'); ?>"><?php echo $meta_title; ?></a>
-		    <ul class="nav admin-nav">
+		    <ul class="nav admin-nav pull-right">
 			    <li><a href="<?php echo site_url('admin/dashboard'); ?>">Dashboard</a></li>
 			    <li><?php echo anchor('admin/page', 'Pages'); ?></li>
 			    <li><?php echo anchor('admin/page/order', 'Order Pages'); ?></li>
 			    <li><?php echo anchor('admin/article', 'Blog Posts'); ?></li>
-			    <li><?php echo anchor('admin/user', 'Users'); ?></li>    
-                <li><a href='<?php echo site_url(); ?>'>Site Home</a></li>
+				<li><?php echo anchor('admin/store', 'Store'); ?></li>
+			    <li><?php echo anchor('admin/user', 'Users'); ?></li>				
 		    </ul>
             </div>
 	    </div>
@@ -29,7 +29,7 @@
 			<!-- Sidebar -->
 			<div class="span3 admin-sidebar">
 				<section>
-					<?php echo mailto('tylerb.media@gmail.com', '<i class="icon-user"></i> tylerb.media@gmail.com'); ?><br>
+					<?php echo mailto($this->session->userdata('email'), '<i class="icon-user"></i>' . $this->session->userdata('email')); ?><br>
 					<?php echo anchor('admin/user/logout', '<i class="icon-off"></i> logout'); ?>
 				</section>
 			</div>

@@ -1,11 +1,9 @@
-<?php
-
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
  * 
  *  This class is used to automatically generate CI files when new pages are created. 
  *  ENVIRONMENT constant must be set to 'development' or class will return 404
  * 
- *  @author   Tyler Bailey
  * 
  */
 
@@ -36,7 +34,7 @@ class Generate extends CI_Controller
 	 * @param string $extends Defaults to NULL
 	 * @param boolean $crud Defaults to FALSE
 	 * @return void
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	public function controller ($name, $extends = NULL, $crud = FALSE)
 	{
@@ -62,7 +60,7 @@ class Generate extends CI_Controller
 	 * @param string $name Separate subfolders with backslash folder1\folder2\class_name
 	 * @param string $table Defaults to emtpy string
 	 * @return void
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	public function model ($name, $table = '')
 	{
@@ -87,7 +85,7 @@ class Generate extends CI_Controller
 	 * 
 	 * @param string $name Separate subfolders with backslash folder1\folder2\file_name
 	 * @return void
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	public function view ($name)
 	{
@@ -109,7 +107,7 @@ class Generate extends CI_Controller
 	 * @param string $name Separate subfolders with backslash folder1\folder2\class_name
 	 * @param string $extends Defaults to NULL
 	 * @return void
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	public function library ($name, $extends = NULL)
 	{
@@ -135,7 +133,7 @@ class Generate extends CI_Controller
 	 * 
 	 * @param string $name Separate subfolders with backslash folder1\folder2\file_name
 	 * @return void
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	public function helper ($name)
 	{
@@ -163,7 +161,7 @@ class Generate extends CI_Controller
 	 * @param string $name [folder\][subfolder\]filename
 	 * @param string $base_folder The base folder, relative to '/applications', e.g. 'views' or 'controllers'
 	 * @return string The filepath
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	private function _create_folders_from_name ($name, $base_folder)
 	{
@@ -202,7 +200,7 @@ class Generate extends CI_Controller
 	 * @param string $name
 	 * @param string $extends
 	 * @return string
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	private function _class_open ($name, $type = NULL, $extends = NULL)
 	{
@@ -250,7 +248,7 @@ class Generate extends CI_Controller
 	/**
 	 * Return generic CRUD methods for controller
 	 * @return string
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	private function _crud_methods_contraller ()
 	{
@@ -287,7 +285,7 @@ class Generate extends CI_Controller
 	/**
 	 * Return a generic class closing
 	 * @return string
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	private function _class_close ()
 	{
@@ -302,7 +300,7 @@ class Generate extends CI_Controller
 	/**
 	 * Wrap $this->msg in HTML and return it to be displayed
 	 * @return string
-	 * @author Tyler Bailey
+	 * @author Joost van Veen
 	 */
 	private function _messages ()
 	{

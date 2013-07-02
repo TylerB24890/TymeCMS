@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -56,6 +56,7 @@ class MY_Model extends CI_Model {
 		return $this->get(NULL, $single);
 	}
 	
+	
 	public function save($data, $id = NULL){
 		
 		// Set timestamps
@@ -95,15 +96,4 @@ class MY_Model extends CI_Model {
 		$this->db->limit(1);
 		$this->db->delete($this->_table_name);
 	}
-    
-    //save slider photo to database
-    public function savePhoto($filename)
-    {
-        $data = array(
-            'name' => $filename           
-        );
-        
-        $this->db->insert('slider', $data);
-        return $this->db->insert_id();
-    }
 }

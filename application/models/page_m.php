@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -97,13 +97,5 @@ class Page_m extends MY_Model
 		
 		return $array;
 	}
-    
-    public function get_homepage_slider()
-    {
-        $this->db->select('id', 'name');
-        $this->db->from('slider');
-        $images = parent::get();
-        
-        return $images;
-    }
+  
 }

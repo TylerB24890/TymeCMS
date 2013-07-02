@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * 
@@ -13,8 +13,10 @@ class Page extends Frontend_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('page_m');
+		$this->load->model('store_m');
     }
 
+	//loads on every page
     public function index() {
     	// Fetch the page template
     	$this->data['page'] = $this->page_m->get_by(array('slug' => (string) $this->uri->segment(1)), TRUE);
@@ -31,7 +33,7 @@ class Page extends Frontend_Controller {
     		log_message('error', 'Could not load template ' . $method .' in file ' . __FILE__ . ' at line ' . __LINE__);
     		show_error('Could not load template ' . $method);
     	}
-    	
+		
     	// Load the view
     	$this->data['subview'] = $this->data['page']->template;
     	$this->load->view('_main_layout', $this->data);
@@ -50,14 +52,7 @@ class Page extends Frontend_Controller {
     	$this->data['articles'] = $this->article_m->get();
     }
     
-    //homepage with Nivo Slider template
-    private function _homepage_slider(){
-    	
-    	$this->article_m->set_published();
-    	$this->db->limit(6);
-    	$this->data['articles'] = $this->article_m->get();
-    }
-    
+
     //archive page template
     private function _news_archive(){
     	
@@ -89,13 +84,40 @@ class Page extends Frontend_Controller {
 		$this->data['articles'] = $this->article_m->get();
     }
     
-    
-    //Photo gallery
-    private function _photo_gallery()
-    {
-       //enter code to get photos from database
-    }
-    
+	
+	//store front template
+	private function _store_front() {
+		
+		$this->load->library('cart');
+		$this->load->helper('text');
+		
+		//count all products
+		$count = $this->db->count_all_results('products');
+		
+		$perpage = 5;
+		if($count > $perpage) {
+			$this->load->library('pagination');
+			$config['base_url'] = site_url($this->uri->segment(1) . '/');
+			$config['total_rows'] = $count;
+			$config['per_page'] = $perpage;
+			$config['uri_segment'] = 2;
+			$this->pagination->initialize($config);
+			$this->data['pagination'] = $this->pagination->create_links();
+			$offset = $this->uri->segment(2);
+		} else {
+			$this->data['pagination'] = '';
+			$offset = 0;
+		}
+		
+		$this->db->limit($perpage, $offset);
+		$this->data['products'] = $this->store_m->getProducts();
+		$this->data['cart'] = $this->cart->contents();
+		$this->data['subtotal'] = $this->cart->total();
+		
+	}
+	
+	
+	
     //contact page template
     private function _contact(){
         
@@ -114,6 +136,5 @@ class Page extends Frontend_Controller {
             //send email
             
         }
-        
     }
 }
