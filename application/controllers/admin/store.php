@@ -29,8 +29,8 @@ class Store extends Admin_Controller {
 			$ga_profile = '73714230';
 		
 			$params = array(
-				'email' => 'automatedgroup@gmail.com',
-				'password' => 'Automated1'
+				'email' => '',
+				'password' => ''
 			);
 			
 			$this->load->library('gapi', $params);
